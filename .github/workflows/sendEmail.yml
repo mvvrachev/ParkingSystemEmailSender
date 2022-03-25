@@ -31,8 +31,8 @@ jobs:
           sudo apt update
           sudo apt install default-jre
           
-      - name: curl
-        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.0/EmailSender.jar --output EmailSender.jar
+      - name: Install jar from github release
+        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.0/EmailSender.jar -L --output EmailSender.jar
         
       - name: Run jar
         run: java -jar EmailSender.jar
