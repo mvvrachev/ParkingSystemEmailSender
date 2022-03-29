@@ -26,10 +26,11 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Install java
+      - name: Install java 16
         run: |
+          sudo add-apt-repository ppa:linuxuprising/java
           sudo apt update
-          sudo apt install default-jre
+          sudo apt install oracle-java16-installer
           
       - name: Install jar from github release
         run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.0/EmailSender.jar -L --output EmailSender.jar
