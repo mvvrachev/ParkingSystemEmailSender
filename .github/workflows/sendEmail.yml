@@ -6,7 +6,7 @@ name: Send Email
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-    - cron: '0 22 * * *'
+    - cron: '0 3 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           sudo apt install default-jre
           
       - name: Install jar from github release
-        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.2/EmailSender.jar -L --output EmailSender.jar
+        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.3/EmailSender.jar -L --output EmailSender.jar
         
       - name: Run jar
         run: java -jar EmailSender.jar
