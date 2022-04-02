@@ -64,7 +64,6 @@ public class EmailSender {
             reservations.append(document.getData()).append("\n");
         }
 
-
         // Recipient's email ID needs to be mentioned.
         String to = "parkingsystem4@gmail.com";
 
@@ -120,10 +119,10 @@ public class EmailSender {
     }
 
     private static String getTodayDate() {
+
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         Calendar calendar = Calendar.getInstance();
 
         return formatter.format(calendar.getTime());
     }
 }
-
