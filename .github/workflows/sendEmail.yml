@@ -32,5 +32,8 @@ jobs:
       - name: Install jar from github release
         run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.3/EmailSender.jar -L --output EmailSender.jar
         
+      - name: Echo file
+        run: echo "${{ secrets.FIREBASEADMIN_JSON }}"
+        
       - name: Run jar
         run: java -jar EmailSender.jar
