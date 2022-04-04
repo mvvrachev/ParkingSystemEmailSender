@@ -13,9 +13,13 @@ import com.google.firebase.cloud.FirestoreClient;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -26,10 +30,9 @@ import java.util.concurrent.ExecutionException;
 public class EmailSender {
     public static void main(String[] args) {
 
-        FileInputStream serviceAccount =
-                null;
+        FileInputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("EmailSender\\parkingsystem-cf164-firebase-adminsdk-5jjuk-2be72bfcce.json");
+            serviceAccount = new FileInputStream("credentials.json");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
