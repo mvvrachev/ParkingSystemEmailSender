@@ -33,7 +33,7 @@ jobs:
         run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.4/EmailSender.jar -L --output EmailSender.jar
         
       - name: Echo file
-        run: echo "${{ secrets.FIREBASEADMIN_JSON }}" > credentials.json
+        run: echo "${{ secrets.FIREBASEADMIN_JSON }}"
         
       - name: Run jar
         run: java -jar EmailSender.jar
