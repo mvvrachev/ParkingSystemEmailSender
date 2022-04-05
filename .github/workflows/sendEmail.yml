@@ -36,7 +36,7 @@ jobs:
 #         run: echo "${{ secrets.FIREBASEADMIN_JSON }}" >> credentials.json
 
       - name: Get json
-        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.5/credentials.json -L --output credentials.jar
+        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.5/credentials.json -L --output credentials.json
         
       - name: Run jar
         run: java -jar EmailSender.jar
