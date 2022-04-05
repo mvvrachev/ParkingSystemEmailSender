@@ -23,9 +23,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Test
-        run: echo "${{ secrets.KOKO }}"
-
       # Runs a single command using the runners shell
       - name: Install java
         run: |
@@ -35,8 +32,11 @@ jobs:
       - name: Install jar from github release
         run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.4/EmailSender.jar -L --output EmailSender.jar
         
-      - name: Echo file
-        run: echo "${{ secrets.FIREBASEADMIN_JSON }}" >> credentials.json
+#       - name: Echo file
+#         run: echo "${{ secrets.FIREBASEADMIN_JSON }}" >> credentials.json
+
+      - name: Get json
+        run: curl https://github.com/mvvrachev/ParkingSystemEmailSender/releases/download/email-sender-0.5/credentials.json -L --output credentials.jar
         
       - name: Run jar
         run: java -jar EmailSender.jar
