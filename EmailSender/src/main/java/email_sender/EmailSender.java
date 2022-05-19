@@ -89,7 +89,7 @@ public class EmailSender {
 
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-            message.setSubject("This is the Subject Line!");
+            message.setSubject("Reservations for today");
 
             message.setText(String.valueOf(reservations));
 
